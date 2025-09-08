@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎬 Movie Recommender</h1>
+
+      <div class="upload-box">
+        <label for="fileInput">Upload your liked_movies.csv:</label>
+        <form
+          id="uploadForm"
+          method="POST"
+          action="/submit"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <input type="file" id="fileInput" name="csv_file" accept=".csv" />
+          <button type="submit">Get Recommendations</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
