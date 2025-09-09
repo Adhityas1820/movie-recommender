@@ -27,7 +27,8 @@ A movie recommendation system that uses collaborative filtering to suggest simil
 ### Prerequisites
 - Python 3.x installed
 - Virtual environment (recommended)
-
+### Installation
+- If top10_neighbors.jason does not exist then run the app.py in the parent folder
 ### Clone the Repository
 ```bash
 git clone https://github.com/username/movie-recommender.git
